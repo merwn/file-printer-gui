@@ -30,14 +30,14 @@ A versatile and user-friendly Python application for printing various file types
 
 2. Install the required dependencies:
    ```
-   pip install pillow python-docx2pdf pywin32
+   pip install -r requirements.txt
    ```
 
-3. Create a `config.ini` file in the project directory with your default settings:
-   ```ini
-   [DEFAULT]
-   file_path = C:\path\to\your\default\file.pdf
+3. Create a `config.ini` file in the project directory based on the `config.template.ini` file:
    ```
+   cp config.template.ini config.ini
+   ```
+   Then edit `config.ini` with your preferred settings.
 
 ## Usage
 
@@ -46,7 +46,7 @@ A versatile and user-friendly Python application for printing various file types
 To launch the graphical interface, simply run the script without any arguments:
 
 ```
-python file_printer.py
+python file_printing.py
 ```
 
 The GUI allows you to:
@@ -61,7 +61,7 @@ The GUI allows you to:
 For batch processing or automation, use the command-line interface:
 
 ```
-python file_printer.py [FILES] [OPTIONS]
+python file_printing.py [FILES] [OPTIONS]
 ```
 
 Options:
@@ -71,12 +71,30 @@ Options:
 
 Example:
 ```
-python file_printer.py file1.pdf file2.docx --printer "HP Printer" --copies 2 --page-range 1-5
+python file_printing.py file1.pdf file2.docx --printer "HP Printer" --copies 2 --page-range 1-5
 ```
+
+## Development
+
+### Running Tests
+
+To run the tests, execute:
+
+```
+python -m unittest discover tests
+```
+
+### Example Script
+
+Check out the `example-script.py` in the `examples` directory for a basic usage demonstration of the file printing functionality.
 
 ## Contributing
 
-Contributions to the File Printer GUI project are welcome! Please feel free to submit a Pull Request.
+Contributions to the File Printer GUI project are welcome! Please read the [CONTRIBUTING.md](CONTRIBUTING.md) file for guidelines on how to contribute to this project.
+
+## Changelog
+
+For a detailed list of changes and version updates, please refer to the [CHANGELOG.md](CHANGELOG.md) file.
 
 ## License
 
